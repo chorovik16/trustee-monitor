@@ -12,10 +12,12 @@ if sys.platform == "win32":
     except Exception:
         pass
 
-# Add project root to sys.path so trustee_monitor imports cleanly
-ROOT_DIR = Path(__file__).resolve().parent.parent
+# Add project root and parent to sys.path so trustee_monitor imports cleanly everywhere
+ROOT_DIR = Path(__file__).resolve().parent
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
+if str(ROOT_DIR.parent) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR.parent))
 
 from trustee_monitor.database.connection import init_db
 from trustee_monitor.modules.mutation_generator import generate_domain_permutations
