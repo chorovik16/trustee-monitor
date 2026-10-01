@@ -1,0 +1,25 @@
+# Secrets and environment variables (STRICTLY FORBIDDEN IN GIT)
+.env
+*.env
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+ENV/
+
+# Database data & logs
+*.db
+*.sqlite
+*.sqlite3
+postgres_data/
+*.log
+
+# IDE
+.idea/
+.vscode/
